@@ -1,4 +1,0 @@
-user_id,failed_attempts,unique_ips,active_minutes,anomaly,anomaly_score,label
-u002,1,1,1.0,-1,-0.12300165658937029,Anomalous
-u001,5,1,4.0,1,0.12300165658937029,Normal
-u999,5,1,4.0,1,0.12300165658937029,Normal
