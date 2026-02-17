@@ -29,11 +29,13 @@ Traditional rule-based detection methods may miss subtle behavioral deviations, 
 Project Structure
 The repository is organized into progressive stages:
 
+
 01 – Statistical Baseline Detection
 Z-score anomaly detection
 Interquartile Range (IQR) outlier detection
 Identifies users with statistically abnormal failure counts
 Demonstrates basic threshold-based anomaly detection
+
 
 02 – Brute-Force Window Detection
 Time-window based detection logic
@@ -41,11 +43,13 @@ Flags burst login failures within short intervals
 Simulates real-world brute-force detection behavior
 Introduces rule-based detection concepts
 
+
 03 – Risk Scoring Model
 Assigns severity scores based on failed attempts
 Prioritizes alerts for investigation
 Demonstrates simple risk modeling logic
 Bridges rule-based detection and behavioral assessment
+
 
 04 – Isolation Forest Model (Authentication Logs)
 Unsupervised anomaly detection
@@ -56,6 +60,7 @@ Active duration
 Identifies multi-dimensional behavioral anomalies
 Demonstrates ML-based anomaly detection on login data
 
+
 05 – Method Comparison Analysis
 Compares:
 Z-score
@@ -64,6 +69,7 @@ Isolation Forest
 Evaluates detection consistency
 Highlights strengths and limitations of each approach
 Introduces analytical comparison methodology
+
 
 06 – Network Traffic Anomaly Detection
 Simulated network traffic dataset
@@ -76,6 +82,7 @@ Applied Isolation Forest to detect abnormal traffic patterns
 Visualized separation between normal and anomalous sessions
 Extends anomaly detection beyond authentication logs
 
+
 07 – Log-Based Intrusion Detection System
 Simulated intrusion-like authentication behavior
 Engineered behavioral indicators such as:
@@ -84,6 +91,7 @@ Abnormal login timing
 User-level activity patterns
 Combined rule-based logic with ML-based anomaly detection
 Demonstrates layered detection design similar to hybrid IDS systems
+
 
 08 – Research-Style Evaluation Study
 Introduced labeled anomaly data for controlled evaluation
