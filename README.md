@@ -1,113 +1,160 @@
-# Cybersecurity Anomaly Detection Projects
+Cybersecurity Anomaly Detection Projects
+A collection of cybersecurity-focused anomaly detection and intrusion detection projects comparing statistical methods and unsupervised machine learning approaches for detecting and analyzing suspicious behavior in authentication and network traffic logs.
 
-## Overview
+Overview
+This repository presents a structured progression of anomaly detection and intrusion detection projects focused on identifying suspicious behavior in both authentication logs and network traffic data.
 
-This repository presents a structured anomaly detection pipeline for identifying suspicious login behavior in authentication logs. The project explores and compares statistical methods and unsupervised machine learning techniques to detect abnormal user activity patterns.
+The objective is to evaluate how different detection strategies perform in identifying:
 
-The objective is to evaluate how different approaches perform in detecting login anomalies such as brute-force attempts, burst failures, and unusual behavioral deviations.
+Brute-force login attempts
+Burst failures
+Behavioral anomalies
+Abnormal network traffic patterns
 
-## Problem Statement
+Intrusion-like activity
+The projects evolve from basic statistical detection to machine learning-based anomaly detection and finally to a research-style evaluation study.
 
-Authentication systems generate large volumes of login events. Detecting anomalous behavior within these logs is critical for preventing:
+Problem Statement
+Modern systems generate large volumes of authentication and network traffic logs. Detecting malicious behavior within this data is critical for preventing:
 
-- Brute-force attacks
-- Credential stuffing
-- Account takeover attempts
-- Suspicious behavioral deviations
+Brute-force attacks
+Credential stuffing
+Account takeover attempts
+Privilege escalation
+Data exfiltration
 
-Traditional rule-based detection may miss subtle patterns, while machine learning approaches may detect broader behavioral irregularities. This project evaluates both perspectives.
+Suspicious network sessions
+Traditional rule-based detection methods may miss subtle behavioral deviations, while machine learning models can detect broader multi-feature anomalies. This repository explores both approaches and evaluates their effectiveness.
 
-## Project Structure
+Project Structure
+The repository is organized into progressive stages:
 
-The repository is organized into five progressive stages:
+01 – Statistical Baseline Detection
+Z-score anomaly detection
+Interquartile Range (IQR) outlier detection
+Identifies users with statistically abnormal failure counts
+Demonstrates basic threshold-based anomaly detection
 
-### 01 – Statistical Baseline Detection
-- Z-score anomaly detection
-- Interquartile Range (IQR) outlier detection
-- Identifies users with statistically abnormal failure counts
+02 – Brute-Force Window Detection
+Time-window based detection logic
+Flags burst login failures within short intervals
+Simulates real-world brute-force detection behavior
+Introduces rule-based detection concepts
 
-### 02 – Brute-Force Window Detection
-- Time-window based detection logic
-- Flags burst login failures within short intervals
-- Simulates real-world brute-force detection logic
+03 – Risk Scoring Model
+Assigns severity scores based on failed attempts
+Prioritizes alerts for investigation
+Demonstrates simple risk modeling logic
+Bridges rule-based detection and behavioral assessment
 
-### 03 – Risk Scoring Model
-- Assigns severity scores based on failed attempts
-- Prioritizes alerts for investigation
-- Demonstrates rule-based risk modeling
+04 – Isolation Forest Model (Authentication Logs)
+Unsupervised anomaly detection
+Aggregates behavioral features:
+Failed attempts
+Unique IP usage
+Active duration
+Identifies multi-dimensional behavioral anomalies
+Demonstrates ML-based anomaly detection on login data
 
-### 04 – Isolation Forest Model
-- Unsupervised anomaly detection
-- Aggregates behavioral features:
-  - Failed attempts
-  - Unique IP usage
-  - Active duration
-- Identifies multi-dimensional behavioral anomalies
+05 – Method Comparison Analysis
+Compares:
+Z-score
+IQR
+Isolation Forest
+Evaluates detection consistency
+Highlights strengths and limitations of each approach
+Introduces analytical comparison methodology
 
-### 05 – Method Comparison Analysis
-- Compares:
-  - Z-score
-  - IQR
-  - Isolation Forest
-- Evaluates detection consistency
-- Highlights strengths and limitations of each approach
+06 – Network Traffic Anomaly Detection
+Simulated network traffic dataset
 
-## Methodology
+Features analyzed:
+Packet size
+Connection duration
+Bytes transferred
+Applied Isolation Forest to detect abnormal traffic patterns
+Visualized separation between normal and anomalous sessions
+Extends anomaly detection beyond authentication logs
 
-The pipeline follows this workflow:
+07 – Log-Based Intrusion Detection System
+Simulated intrusion-like authentication behavior
+Engineered behavioral indicators such as:
+Failed login attempts
+Abnormal login timing
+User-level activity patterns
+Combined rule-based logic with ML-based anomaly detection
+Demonstrates layered detection design similar to hybrid IDS systems
 
-1. Log ingestion and preprocessing
-2. Feature engineering at user level
-3. Statistical anomaly detection
-4. Time-based pattern detection
-5. Unsupervised ML modeling
-6. Comparative evaluation
+08 – Research-Style Evaluation Study
+Introduced labeled anomaly data for controlled evaluation
+Compared:
+
+Z-Score statistical detection
+Isolation Forest predictions
+Measured:
+Precision
+Recall
+Confusion matrix
+Demonstrated limitations of simple statistical methods
+Highlighted strengths of unsupervised ML approaches
+
+Methodology
+The extended detection pipeline follows this workflow:
+
+Log ingestion and preprocessing
+Feature engineering (user-level and network-level)
+Statistical anomaly detection (Z-score, IQR)
+Time-based pattern detection
+Unsupervised machine learning modeling (Isolation Forest)
+Network-level anomaly simulation
+Hybrid intrusion detection modeling
+Research-style evaluation using labeled ground truth
 
 Each method operates under different assumptions:
 
-| Method | Type | Strength |
-|--------|------|----------|
-| Z-Score | Statistical | Detects extreme deviations |
-| IQR | Statistical | Robust to skewed distributions |
-| Time Window | Rule-Based | Captures burst attack behavior |
-| Isolation Forest | ML | Detects multi-feature anomalies |
+Method	Type	Strength
+Z-Score	Statistical	Detects extreme deviations
+IQR	Statistical	Robust to skewed distributions
+Time Window	Rule-Based	Captures burst attack behavior
+Isolation Forest	ML	Detects multi-feature anomalies
+Hybrid Detection	Rule + ML	Layered detection capability
 
-## Key Findings
+Key Findings
+Statistical methods effectively detect extreme deviations but may fail in small or skewed datasets.
+Time-window detection captures burst behavior missed by simple thresholds.
+Isolation Forest detects anomalies across multiple behavioral dimensions.
+Network-level modeling extends detection beyond authentication logs.
+Z-score thresholding may fail when anomalies influence distribution statistics.
+Unsupervised machine learning provides more flexible detection in evolving environments.
+Hybrid detection approaches combining rules and ML improve robustness.
 
-- Statistical methods effectively detect users with unusually high failure rates.
-- Time-window detection captures burst behavior missed by simple thresholds.
-- Isolation Forest detects anomalies across multiple behavioral dimensions.
-- Hybrid detection strategies are more robust than single-method approaches.
+Technologies Used
+Python
+Pandas
+NumPy
+Matplotlib
+Scikit-learn (Isolation Forest)
+Scipy (Z-score computation)
 
-## Technologies Used
+Research Relevance
+This repository demonstrates applied anomaly detection techniques relevant to:
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn (Isolation Forest)
+AI-driven cybersecurity systems
+Unsupervised learning research
+Behavioral anomaly modeling
+Intrusion detection system design
+Security analytics
 
-## Research Relevance
+The later projects transition from practical anomaly simulation to structured research evaluation, aligning the repository with applied AI cybersecurity research practices.
 
-This project demonstrates applied anomaly detection techniques relevant to:
+Future Work
+Incorporate real-world cybersecurity datasets (e.g., CICIDS, UNSW-NB15)
+Compare additional anomaly detection algorithms
+Introduce deep learning-based intrusion detection
+Evaluate models using larger labeled datasets
+Deploy detection logic into a real-time pipeline simulation
 
-- AI-driven cybersecurity systems
-- Unsupervised learning research
-- Behavioral anomaly modeling
-- Security analytics
-
-The structured comparison of statistical and ML approaches highlights trade-offs between explainability and detection flexibility.
-
-## Future Work
-
-- Incorporate real-world datasets
-- Add IP reputation scoring
-- Implement supervised anomaly classification
-- Deploy as real-time detection pipeline
-- Evaluate precision/recall on labeled attack data
-
-## Author
-
-Nehrin Gani  
+Author
+Nehrin Gani
 Cybersecurity & AI Research Enthusiast
 
