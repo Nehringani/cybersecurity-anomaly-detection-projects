@@ -1,0 +1,56 @@
+                ┌──────────────────────┐
+                │   Data Sources       │
+                │----------------------│
+                │ • Authentication Logs│
+                │ • Network Traffic    │
+                └────────────┬─────────┘
+                             │
+                             ▼
+                ┌──────────────────────┐
+                │ Data Ingestion Layer │
+                │----------------------│
+                │ Log Parsing          │
+                │ Timestamp Handling   │
+                │ Data Formatting      │
+                └────────────┬─────────┘
+                             │
+                             ▼
+                ┌──────────────────────────┐
+                │ Preprocessing & Features │
+                │--------------------------│
+                │ Failed Attempts Count    │
+                │ IP Diversity             │
+                │ Duration                 │
+                │ Packet Size              │
+                │ Bytes Transferred        │
+                └────────────┬─────────────┘
+                             │
+                             ▼
+         ┌──────────────────────────────────────┐
+         │ Detection Layer                      │
+         │--------------------------------------│
+         │ Statistical Methods:                 │
+         │   • Z-Score                          │
+         │   • IQR                              │
+         │                                      │
+         │ Machine Learning:                    │
+         │   • Isolation Forest                 │
+         └────────────┬─────────────────────────┘
+                      │
+                      ▼
+            ┌──────────────────────┐
+            │ Evaluation Layer     │
+            │----------------------│
+            │ Precision            │
+            │ Recall               │
+            │ Confusion Matrix     │
+            └────────────┬─────────┘
+                         │
+                         ▼
+            ┌──────────────────────┐
+            │ Alert & Reporting    │
+            │----------------------│
+            │ Flag Suspicious User │
+            │ Flag Suspicious IP   │
+            │ Visualization        │
+            └──────────────────────┘
